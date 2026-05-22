@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 97%;
+    --foreground: 20 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 15%;
+
+    --primary: 340 45% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 20% 92%;
+    --secondary-foreground: 20 15% 25%;
+
+    --muted: 30 15% 93%;
+    --muted-foreground: 20 10% 50%;
+
+    --accent: 350 60% 94%;
+    --accent-foreground: 340 45% 55%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 340 45% 68%;
+
+    --radius: 0.75rem;
+
+    /* Brand colors */
+    --blush: 340 45% 68%;
+    --nude: 30 25% 78%;
+    --cream: 30 30% 97%;
+    --rose-dark: 340 40% 48%;
+    --gold: 38 65% 65%;
+
+    --shadow-soft: 0 4px 24px hsl(340 45% 68% / 0.12);
+    --shadow-card: 0 2px 16px hsl(20 15% 15% / 0.06);
+    --shadow-hover: 0 8px 32px hsl(340 45% 68% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--rose-dark)), hsl(var(--blush)), hsl(var(--gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--blush) / 0.15), hsl(var(--nude) / 0.2));
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
